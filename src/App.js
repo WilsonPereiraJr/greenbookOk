@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import Logo from "./componentes/Logo/index";
+import SearchBar from "./componentes/Searchbar/index";
+import Disclaimerdialog from "./componentes/Disclaimerdialog/index";
+import Rightsreserved from "./componentes/Rightsreserved/index";
 
-function App() {
+export default function App() {
+  const [text, setText] = useState("");
+  useEffect(() => {
+    if (text) {
+      fetch("https://greenbook.filipelopes.med.br/graphql")
+        .then((response) => response.json())
+        .then((response) => {
+          console.log(response);
+        });
+    }
+  }, [text]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Logo />
+      <SearchBar value={text} onChange={(search) => setText(search)} />
+      <Rightsreserved />
+      <Disclaimerdialog />
     </div>
   );
 }
-
-export default App;

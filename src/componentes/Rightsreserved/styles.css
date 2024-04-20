@@ -1,0 +1,19 @@
+.rightsreserved {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 13px;
+  .greenbook-by {
+    margin-bottom: 10px;
+    font: 500 20px Montserrat, sans-serif;
+    .greenbook {
+      font: 800 20px Montserrat, sans-serif;
+      #ee {
+        color: var(--focus-out-color-sb);
+      }
+    }
+  }
+  .rights {
+    font: 300 12px Montserrat, sans-serif;
+  }
+}

@@ -1,0 +1,25 @@
+.search-b {
+  width: 80vw;
+  max-width: 737px;
+  min-width: 277px;
+  height: 50px;
+  input {
+    font: 500 20px Lato, sans-serif;
+    border: 4px solid var(--bor-color-sb);
+    outline: 4px solid var(--out-color-sb);
+    border-radius: 22px 22px 22px 0px;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    &::placeholder {
+      color: var(--placeholder-color);
+    }
+    &:focus {
+      border: 4px solid var(--focus-bor-color-sb);
+      outline: 4px solid var(--focus-out-color-sb);
+    }
+  }
+}
+input::-webkit-search-cancel-button {
+  display: none;
+}
