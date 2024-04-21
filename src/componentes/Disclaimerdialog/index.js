@@ -2,9 +2,9 @@ import "./styles.css";
 import React, { useState } from "react";
 export default function Disclaimerdialog() {
   const [isClosed, setIsClosed] = useState(false);
-  if (isClosed) return;
+
   return (
-    <dialog open>
+    <dialog open={isClosed ? false : true}>
       <p>
         <span>Disclaimer</span> Esse sistema foi realizado com o intuito de
         estruturar o conhecimento aprendido durante o curso de Pós Graduação em
